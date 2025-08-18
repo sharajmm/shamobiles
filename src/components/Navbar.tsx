@@ -142,4 +142,7 @@ const Navbar: React.FC = () => {
   );
 };
 
+export const openLogin = () => {
+  window.location.href = "/login";
+};
 export default Navbar;

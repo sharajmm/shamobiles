@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import {
   collection,
@@ -25,6 +26,7 @@ interface RepairRequest {
 }
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [formData, setFormData] = useState({
     brand: "",
@@ -184,12 +186,12 @@ const Services: React.FC = () => {
               Please login to submit repair requests and track your device
               status.
             </p>
-            <a
-              href="/login"
+            <button
               className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+              onClick={() => navigate("/login")}
             >
               Login Now
-            </a>
+            </button>
           </div>
         </div>
       </div>
