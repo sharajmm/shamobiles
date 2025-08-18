@@ -101,8 +101,17 @@ const Blog: React.FC = () => {
 
         {/* Popup for blog post */}
         {activePost && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto p-8 relative">
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            onClick={(e) => {
+              // Only close if the user clicks the overlay, not the modal content
+              if (e.target === e.currentTarget) setActivePost(null);
+            }}
+          >
+            <div
+              className="bg-white rounded-lg shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto p-8 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-900 text-xl"
                 onClick={() => setActivePost(null)}
