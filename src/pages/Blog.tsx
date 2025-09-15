@@ -8,7 +8,7 @@ interface BlogPost {
   title: string;
   content: string;
   createdAt: Date;
-  image?: string; // external image link
+  image?: string;
 }
 
 const Blog: React.FC = () => {
@@ -38,9 +38,6 @@ const Blog: React.FC = () => {
       setLoading(false);
     }
   };
-
-  // Default posts to show when no posts exist
-  // Only show posts from Firestore (admin-added)
   const postsToShow = posts;
 
   if (loading) {
@@ -90,7 +87,7 @@ const Blog: React.FC = () => {
                 <Calendar className="h-4 w-4 mr-2" />
                 <span>{post.createdAt.toLocaleDateString()}</span>
                 <User className="h-4 w-4 ml-4 mr-2" />
-                <span>RepairPro Team</span>
+                <span>Sha Repairs Team</span>
               </div>
               <p className="text-gray-700 line-clamp-3">
                 {post.content.slice(0, 120)}...
@@ -99,12 +96,10 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-        {/* Popup for blog post */}
         {activePost && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
             onClick={(e) => {
-              // Only close if the user clicks the overlay, not the modal content
               if (e.target === e.currentTarget) setActivePost(null);
             }}
           >
@@ -132,7 +127,7 @@ const Blog: React.FC = () => {
                 <Calendar className="h-4 w-4 mr-2" />
                 <span>{activePost.createdAt.toLocaleDateString()}</span>
                 <User className="h-4 w-4 ml-4 mr-2" />
-                <span>RepairPro Team</span>
+                <span>Sha Repairs Team</span>
               </div>
               <div className="prose max-w-none">
                 {activePost.content.split("\n").map((paragraph, index) => (

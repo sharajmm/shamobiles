@@ -35,10 +35,9 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Smartphone className="h-8 w-8 text-green-600" />
-            <span className="font-bold text-xl text-gray-900">RepairPro</span>
+            <span className="font-bold text-xl text-gray-900">Sha Repairs</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -79,7 +78,6 @@ const Navbar: React.FC = () => {
               </div>
             )}
           </div>
-          {/* Hamburger Button for Mobile */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -95,7 +93,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">

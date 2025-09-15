@@ -1,57 +1,62 @@
-import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { Smartphone, Mail, Lock, User, Phone } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { Smartphone, Mail, Lock, User, Phone } from "lucide-react";
 
 const Login: React.FC = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const { signIn, signUp, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
       if (isSignUp) {
         if (formData.password !== formData.confirmPassword) {
-          throw new Error('Passwords do not match');
+          throw new Error("Passwords do not match");
         }
-        await signUp(formData.email, formData.password, formData.name, formData.phone);
+        await signUp(
+          formData.email,
+          formData.password,
+          formData.name,
+          formData.phone
+        );
       } else {
         await signIn(formData.email, formData.password);
       }
       navigate(from, { replace: true });
     } catch (error: any) {
-      setError(error.message || 'An error occurred');
+      setError(error.message || "An error occurred");
     } finally {
       setLoading(false);
     }
   };
 
   const handleGoogleSignIn = async () => {
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
       await signInWithGoogle();
       navigate(from, { replace: true });
     } catch (error: any) {
-      setError(error.message || 'Google sign in failed');
+      setError(error.message || "Google sign in failed");
     } finally {
       setLoading(false);
     }
@@ -59,13 +64,13 @@ const Login: React.FC = () => {
 
   const resetForm = () => {
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      password: '',
-      confirmPassword: '',
+      name: "",
+      email: "",
+      phone: "",
+      password: "",
+      confirmPassword: "",
     });
-    setError('');
+    setError("");
   };
 
   const toggleMode = () => {
@@ -79,16 +84,18 @@ const Login: React.FC = () => {
         <div className="flex justify-center">
           <Link to="/" className="flex items-center space-x-2">
             <Smartphone className="h-10 w-10 text-green-600" />
-            <span className="font-bold text-2xl text-gray-900">RepairPro</span>
+            <span className="font-bold text-2xl text-gray-900">
+              Sha Repairs
+            </span>
           </Link>
         </div>
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-          {isSignUp ? 'Create your account' : 'Sign in to your account'}
+          {isSignUp ? "Create your account" : "Sign in to your account"}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           {isSignUp ? (
             <>
-              Already have an account?{' '}
+              Already have an account?{" "}
               <button
                 onClick={toggleMode}
                 className="font-medium text-green-600 hover:text-green-500"
@@ -98,7 +105,7 @@ const Login: React.FC = () => {
             </>
           ) : (
             <>
-              Don't have an account?{' '}
+              Don't have an account?{" "}
               <button
                 onClick={toggleMode}
                 className="font-medium text-green-600 hover:text-green-500"
@@ -122,7 +129,10 @@ const Login: React.FC = () => {
             {isSignUp && (
               <>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Full Name
                   </label>
                   <div className="mt-1 relative">
@@ -132,7 +142,9 @@ const Login: React.FC = () => {
                       type="text"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
                       placeholder="Enter your full name"
                     />
@@ -141,7 +153,10 @@ const Login: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Phone Number
                   </label>
                   <div className="mt-1 relative">
@@ -150,7 +165,9 @@ const Login: React.FC = () => {
                       name="phone"
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                       className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
                       placeholder="Enter your phone number"
                     />
@@ -161,7 +178,10 @@ const Login: React.FC = () => {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <div className="mt-1 relative">
@@ -172,7 +192,9 @@ const Login: React.FC = () => {
                   autoComplete="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
                   placeholder="Enter your email"
                 />
@@ -181,7 +203,10 @@ const Login: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
               <div className="mt-1 relative">
@@ -192,7 +217,9 @@ const Login: React.FC = () => {
                   autoComplete={isSignUp ? "new-password" : "current-password"}
                   required
                   value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
                   placeholder="Enter your password"
                 />
@@ -202,7 +229,10 @@ const Login: React.FC = () => {
 
             {isSignUp && (
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Confirm Password
                 </label>
                 <div className="mt-1 relative">
@@ -213,7 +243,12 @@ const Login: React.FC = () => {
                     autoComplete="new-password"
                     required
                     value={formData.confirmPassword}
-                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        confirmPassword: e.target.value,
+                      })
+                    }
                     className="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-400 text-gray-900 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
                     placeholder="Confirm your password"
                   />
@@ -228,7 +263,7 @@ const Login: React.FC = () => {
                 disabled={loading}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Please wait...' : (isSignUp ? 'Sign Up' : 'Sign In')}
+                {loading ? "Please wait..." : isSignUp ? "Sign Up" : "Sign In"}
               </button>
             </div>
 
@@ -238,7 +273,9 @@ const Login: React.FC = () => {
                   <div className="w-full border-t border-gray-300" />
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                  <span className="px-2 bg-white text-gray-500">
+                    Or continue with
+                  </span>
                 </div>
               </div>
 

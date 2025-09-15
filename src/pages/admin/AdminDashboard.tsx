@@ -55,7 +55,7 @@ interface BlogPost {
   title: string;
   content: string;
   createdAt: Date;
-  image?: string; // external image link
+  image?: string;
 }
 
 const AdminDashboard: React.FC = () => {
@@ -70,7 +70,6 @@ const AdminDashboard: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Edit states
   const [editingRepair, setEditingRepair] = useState<string | null>(null);
   const [editingProduct, setEditingProduct] = useState<string | null>(null);
   const [editingBlog, setEditingBlog] = useState<string | null>(null);
@@ -109,7 +108,6 @@ const AdminDashboard: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      // Fetch repairs
       const repairsQuery = query(
         collection(db, "mobiles"),
         orderBy("createdAt", "desc")
@@ -122,7 +120,6 @@ const AdminDashboard: React.FC = () => {
       })) as RepairRequest[];
       setRepairs(repairsList);
 
-      // Fetch products
       const productsQuery = query(
         collection(db, "products"),
         orderBy("createdAt", "desc")
@@ -134,7 +131,6 @@ const AdminDashboard: React.FC = () => {
       })) as Product[];
       setProducts(productsList);
 
-      // Fetch blog posts
       const blogQuery = query(
         collection(db, "blog"),
         orderBy("createdAt", "desc")
@@ -168,7 +164,6 @@ const AdminDashboard: React.FC = () => {
 
       await updateDoc(doc(db, "mobiles", repairId), updateData);
 
-      // If status is Done, trigger notification (placeholder for Firebase Function)
       if (repairForm.status === "Done") {
         console.log("Repair completed - notification would be sent here");
       }
@@ -357,7 +352,6 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow">
             <div className="flex items-center">
@@ -408,7 +402,6 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Tabs */}
         <div className="bg-white rounded-lg shadow mb-8">
           <div className="border-b border-gray-200">
             <nav className="flex space-x-8 px-6">
@@ -434,7 +427,6 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           <div className="p-6">
-            {/* Repairs Tab */}
             {activeTab === "repairs" && (
               <div className="space-y-6">
                 {repairs.length === 0 ? (
@@ -597,7 +589,6 @@ const AdminDashboard: React.FC = () => {
               </div>
             )}
 
-            {/* Products Tab */}
             {activeTab === "products" && (
               <div>
                 <div className="flex justify-between items-center mb-6">
@@ -914,7 +905,6 @@ const AdminDashboard: React.FC = () => {
               </div>
             )}
 
-            {/* Blog Tab */}
             {activeTab === "blog" && (
               <div>
                 <div className="flex justify-between items-center mb-6">

@@ -106,7 +106,6 @@ const Services: React.FC = () => {
     }
   };
 
-  // Helper to generate a unique token
   const generateToken = () => {
     return "TICKET-" + Math.random().toString(36).substr(2, 9).toUpperCase();
   };
@@ -211,7 +210,6 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <div
@@ -228,7 +226,6 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Service Request Form */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
               Submit Repair Request
@@ -347,12 +344,10 @@ const Services: React.FC = () => {
             </form>
           </div>
 
-          {/* My Repairs */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
               My Repair Requests
             </h2>
-            {/* Search Bar for Token ID */}
             <div className="mb-6 flex gap-2">
               <input
                 id="searchToken"

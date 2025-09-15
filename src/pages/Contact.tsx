@@ -14,7 +14,6 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -120,11 +119,9 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                {/* Removed invalid/duplicate contact blocks and fixed tag structure */}
               </div>
             </div>
 
-            {/* Quick Contact Tips */}
             <div className="bg-green-50 rounded-lg p-6">
               <h3 className="font-semibold text-green-900 mb-4">
                 Quick Tips for Faster Service
@@ -138,7 +135,6 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Map */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Us</h2>
 
@@ -151,7 +147,7 @@ const Contact: React.FC = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="RepairPro Location"
+                title="Sha Repairs Location"
               />
             </div>
 
@@ -166,7 +162,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Emergency Contact */}
         <div className="mt-12 bg-red-50 rounded-lg p-6 text-center">
           <h3 className="text-lg font-semibold text-red-900 mb-2">
             Emergency Repairs

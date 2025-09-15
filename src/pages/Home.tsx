@@ -47,7 +47,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -74,12 +73,12 @@ const Home: React.FC = () => {
                 >
                   Contact Us
                 </Link>
-              </div>  
+              </div>
             </div>
             <div className="relative h-full w-full flex items-center justify-center">
               <img
                 src={mobileservice}
-                alt="Mobile Service"
+                alt="Sha Repairs Service"
                 className="rounded-2xl w-full h-full object-cover max-h-[320px] min-h-[200px]"
               />
             </div>
@@ -87,12 +86,11 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose RepairPro?
+              Why Choose Sha Repairs?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We provide professional mobile repair services with transparency,
@@ -117,7 +115,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -164,7 +161,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -197,7 +193,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-green-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Smartphone, MapPin, Phone, Mail } from "lucide-react";
+import { Smartphone, Phone, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Smartphone className="h-8 w-8 text-green-500" />
-              <span className="font-bold text-xl">RepairPro</span>
+              <span className="font-bold text-xl">Sha Repairs</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Your trusted mobile repair service provider. We specialize in
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2025 RepairPro. All rights reserved.</p>
+          <p>&copy; 2025 Sha Repairs. All rights reserved.</p>
         </div>
       </div>
     </footer>

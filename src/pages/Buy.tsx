@@ -23,7 +23,6 @@ const Buy: React.FC = () => {
 
   useEffect(() => {
     fetchProducts();
-    // eslint-disable-next-line
   }, []);
 
   const fetchProducts = async () => {
@@ -77,7 +76,6 @@ const Buy: React.FC = () => {
             warranty and quality assurance.
           </p>
         </div>
-        {/* Filter by Brand */}
         <div className="mb-8">
           <div className="flex flex-wrap gap-2 justify-center">
             {brands.map((brand) => (
@@ -215,7 +213,6 @@ const Buy: React.FC = () => {
             ))}
           </div>
         )}
-        {/* Product Popup Modal */}
         {selectedProduct && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
@@ -297,7 +294,6 @@ const Buy: React.FC = () => {
             </div>
           </div>
         )}
-        {/* Info Section */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6 bg-white rounded-lg shadow">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
