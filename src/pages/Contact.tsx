@@ -70,10 +70,10 @@ const Contact: React.FC = () => {
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">
                       <a
-                        href="mailto:231cg049@drngpasc.ac.in"
+                        href="mailto:rifanak0619@gmail.com"
                         className="hover:text-green-600 transition-colors"
                       >
-                        231cg045@drngpasc.ac.in
+                        rifanak0619@gmail.com
                       </a>
                     </p>
                   </div>
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
 
             <div className="aspect-w-16 aspect-h-12 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.700264539586!2d77.03201557405842!3d11.061084189105499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f84100000001%3A0x6819aaec8ca1eaf4!2sDr.N.G.P.%20Arts%20and%20Science%20College!5e0!3m2!1sen!2sin!4v1755478343616!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d3911.6722904927656!2d77.31760027505042!3d11.358629738827766!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m5!1s0x3ba9196d907ffffd%3A0xc9bbef75f1a78d1f!2sGobichettipalayam%20-%20Avinashi%20Rd!3m2!1d11.358676599999999!2d77.32018459999999!4m3!3m2!1d11.3585829!2d77.3201985!5e0!3m2!1sen!2sin!4v1757961078851!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 style={{ border: 0, borderRadius: "8px" }}
@@ -160,23 +160,6 @@ const Contact: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12 bg-red-50 rounded-lg p-6 text-center">
-          <h3 className="text-lg font-semibold text-red-900 mb-2">
-            Emergency Repairs
-          </h3>
-          <p className="text-red-700 mb-4">
-            Need urgent repair service? Call our emergency hotline for same-day
-            service availability.
-          </p>
-          <a
-            href="tel:+919361773788"
-            className="inline-flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            <span>Emergency Hotline: +91 93617 73788</span>
-          </a>
         </div>
       </div>
     </div>

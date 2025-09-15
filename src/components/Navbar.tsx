@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
             {currentUser ? (
               <div className="flex items-center space-x-4">
                 <span className="text-gray-700 font-medium">
-                  {userData?.name || currentUser.email}
+                  {userData?.name || "rifanak0619@gmail.com"}
                 </span>
                 <button
                   onClick={handleLogout}
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
               {currentUser ? (
                 <div className="px-3 py-2 space-y-2">
                   <div className="text-gray-700 font-medium">
-                    {userData?.name || currentUser.email}
+                    {userData?.name || "rifanak0619@gmail.com"}
                   </div>
                   <button
                     onClick={handleLogout}

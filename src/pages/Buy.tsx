@@ -27,19 +27,29 @@ const Buy: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
+      console.log("Fetching products from Firestore..."); // Log query initiation
+
       const q = query(
         collection(db, "products"),
-        where("available", "==", true),
-        orderBy("createdAt", "desc")
+        where("available", "==", true) // Removed orderBy clause for testing
       );
+
+      console.log("Constructed query:", q); // Log query details
+
       const querySnapshot = await getDocs(q);
+
+      console.log("Query snapshot:", querySnapshot); // Log raw snapshot
+
       const productList = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       })) as Product[];
+
+      console.log("Fetched products:", productList); // Log fetched products
       setProducts(productList);
     } catch (error) {
-      console.error("Error fetching products:", error);
+      console.error("Error fetching products:", error); // Log any errors
+      alert("Failed to fetch products. Please try again later."); // Notify the user
     } finally {
       setLoading(false);
     }
@@ -192,10 +202,10 @@ const Buy: React.FC = () => {
                       <p className="text-sm text-gray-500">
                         Email:{" "}
                         <a
-                          href="mailto:231cg045@drngpasc.ac.in"
+                          href="mailto:rifanak0619@gmail.com"
                           className="text-green-600 hover:underline"
                         >
-                          231cg045@drngpasc.ac.in
+                          rifanak0619@gmail.com
                         </a>
                       </p>
                     </div>
@@ -278,10 +288,10 @@ const Buy: React.FC = () => {
                 <p className="text-sm text-gray-500">
                   Email:{" "}
                   <a
-                    href="mailto:231cg049@drngpasc.ac.in"
+                    href="mailto:rifanak0619@gmail.com"
                     className="text-green-600 hover:underline"
                   >
-                    231cg045@drngpasc.ac.in
+                    rifanak0619@gmail.com
                   </a>
                 </p>
               </div>

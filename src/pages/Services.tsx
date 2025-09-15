@@ -406,10 +406,10 @@ const Services: React.FC = () => {
                       <span className="block">
                         Email:{" "}
                         <a
-                          href="mailto:231cg049@drngpasc.ac.in"
+                          href="mailto:rifanak0619@gmail.com"
                           className="hover:text-green-600 transition-colors"
                         >
-                          231cg049@drngpasc.ac.in
+                          rifanak0619@gmail.com
                         </a>
                       </span>
                     </p>
